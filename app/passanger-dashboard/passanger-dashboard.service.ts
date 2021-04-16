@@ -1,7 +1,7 @@
 import { Passanger } from './models/passanger.interface';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
@@ -20,15 +20,16 @@ export class PassangerDashboardService {
     constructor(private httpService: Http){
     }
 
-    getPassangers(): Observable<Passanger[]> {
+    getPassangers(): Promise<Passanger[]> {
         return this.httpService
             .get(PASSANGER_API)
-            .map((response: Response) => {
+            .toPromise()
+            .then((response: Response) => {
                 return response.json();
             });
     }
 
-    updatePassangers(passanger: Passanger): Observable<Passanger> {
+    updatePassangers(passanger: Passanger): Promise<Passanger> {
         let headers = new Headers({
             'Content-type': 'application/json'
         });
@@ -37,22 +38,25 @@ export class PassangerDashboardService {
         });
         return this.httpService
             .put(`${PASSANGER_API}/${passanger.id}`, passanger, options)
-            .map((response: Response) => {
+            .toPromise()
+            .then((response: Response) => {
                 return response.json();
             });
     }
 
-    removePassangers(passanger: Passanger): Observable<Passanger> {
+    removePassangers(passanger: Passanger): Promise<Passanger> {
         return this.httpService
             .delete(`${PASSANGER_API}/${passanger.id}`)
-            .map((response: Response) => {
+            .toPromise()
+            .then((response: Response) => {
                 return response.json();
             });
     }
 
-    addPassanger(): Observable<Passanger> {
+    addPassanger(): Promise<Passanger> {
         return this.httpService
             .post(`${PASSANGER_API}`, this.newPassanger)
-            .map((response: Response) => response.json());
+            .toPromise()
+            .then((response: Response) => response.json());
     }
 }
