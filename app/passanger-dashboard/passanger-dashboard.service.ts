@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 const PASSANGER_API: string = '/api/passangers';
 
@@ -29,8 +29,14 @@ export class PassangerDashboardService {
     }
 
     updatePassangers(passanger: Passanger): Observable<Passanger> {
+        let headers = new Headers({
+            'Content-type': 'application/json'
+        });
+        let options = new RequestOptions({
+            headers: headers
+        });
         return this.httpService
-            .put(`${PASSANGER_API}/${passanger.id}`, passanger)
+            .put(`${PASSANGER_API}/${passanger.id}`, passanger, options)
             .map((response: Response) => {
                 return response.json();
             });
