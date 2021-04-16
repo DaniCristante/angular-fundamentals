@@ -10,4 +10,12 @@ import { Passanger } from '../../models/passanger.interface';
 export class PassangerFormComponent {
     @Input()
     detail: Passanger;
+
+    toggleCheckIn(checkedIn: boolean) {
+        if (checkedIn) {
+            this.detail.checkedInDate = Date.now();
+        } else {
+            this.detail .checkedInDate = null;
+        }
+    }
 }

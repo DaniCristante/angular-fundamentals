@@ -1,4 +1,49 @@
-<form>
-    <h1>Form</h1>
+<form #form="ngForm" novalidate>
     {{ detail | json }}
+    <div>
+        <input
+            type="text"
+            name="fullname"
+            [ngModel]="detail?.fullname"
+        >
+    </div>
+    <div>
+        <input
+            type="number"
+            name="id"
+            [ngModel]="detail?.id"
+        >
+    </div>
+    
+    <div>
+        <label>
+            <input
+                type="radio"
+                [value]="true"
+                name="checkedIn"
+                [ngModel]="detail?.checkedIn"
+                (ngModelChange)="toggleCheckIn($event)"  
+            >
+            Yes
+        </label>
+        <label>
+            <input
+                type="radio"
+                [value]="false"
+                name="checkedIn"
+                [ngModel]="detail?.checkedIn"
+                (ngModelChange)="toggleCheckIn($event)"
+            >
+            No
+        </label>
+    </div>
+    <div *ngIf="form.value.checkedIn">
+        <label>Checked in Date</label>
+        <input
+            type="number"
+            name="checkedInDate"
+            [ngModel]="detail?.checkedInDate"
+        >
+    </div>
+    {{ form.value | json }}
 </form>

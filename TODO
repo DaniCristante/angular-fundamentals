@@ -1,3 +1,6 @@
+Templates:
+    ☐ Diferencias entre () [] #(template reference) en un tag
+
 app.component.ts:
     ✔ @Component: se utiliza para definir un componente mediante un selector que hace referencia a un tag html @done(21-04-07 18:45)
     y se le especifica url de hoja de estilos, template, etc?
@@ -27,3 +30,7 @@ Http:
     ///////
     ☐ Como sabe el Http que tiene que ir a buscar el json a la ruta /api/passanger ?
     ☐ Metodo subscribe
+
+Forms:
+    ☐ ngModel
+    ☐ #form=ngForm ?

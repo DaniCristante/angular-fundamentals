@@ -23,5 +23,4 @@ export class PassangerViewerComponent implements OnInit {
                 this.passanger = data;          
             })
     }
-
 }
