@@ -9,7 +9,7 @@ import { Passanger } from '../../models/passanger.interface';
     styleUrls: ['viewer.component.scss']
 })
 
-export class ViewerComponent implements OnInit {
+export class PassangerViewerComponent implements OnInit {
     passanger: Passanger;
 
     constructor(private passangerService: PassangerDashboardService) {

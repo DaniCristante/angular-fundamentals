@@ -5,7 +5,7 @@ import {  HttpModule } from '@angular/http';
 import { PassangerDashboardComponent } from './containers/passanger-dashboard/passanger-dashboard.component';
 import { PassangerCountComponent } from './components/passanger-count/passanger-count.component';
 import { PassangerDetailComponent } from './components/passanger-detail/passanger-detail.component';
-import { ViewerComponent } from './containers/viewer/viewer.component';
+import { PassangerViewerComponent } from './containers/viewer/viewer.component';
 
 import { PassangerDashboardService } from './passanger-dashboard.service';
 
@@ -14,7 +14,7 @@ import { PassangerDashboardService } from './passanger-dashboard.service';
         PassangerDashboardComponent,
         PassangerDetailComponent,
         PassangerCountComponent,
-        ViewerComponent,
+        PassangerViewerComponent,
     ],
     imports: [ // modulos
         CommonModule,
@@ -22,7 +22,7 @@ import { PassangerDashboardService } from './passanger-dashboard.service';
         
     ],
     exports: [ // export components
-        ViewerComponent
+        PassangerViewerComponent
     ],
     providers: [ // services
         PassangerDashboardService,
