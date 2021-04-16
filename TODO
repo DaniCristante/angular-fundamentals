@@ -1,0 +1,29 @@
+app.component.ts:
+    ✔ @Component: se utiliza para definir un componente mediante un selector que hace referencia a un tag html @done(21-04-07 18:45)
+    y se le especifica url de hoja de estilos, template, etc?
+    ✔ Porqué es necesario exportar la clase? se importa en el app.module.ts @done(21-04-07 18:45)
+
+app.module.ts:
+    ✔ Importa el componente, aquí se cargarían todos los componentes creados para el app module? @done(21-04-07 18:39)
+    ✔ Porqué se exporta y se carga en el main.ts? @done(21-04-07 19:42)
+
+main.ts:
+    ☐ Desde dónde y como se carga este file?
+
+Two-way Binding:
+    ☐ [(ngModel)] = "name", como sabe que tiene que llamar al método handleChange?
+
+ngFor:
+    ✔ Porque la interfaz va antes que la declaración del componente? @done(21-04-16 00:14)
+
+
+Http:
+    ☐ Que es un Observable
+    ///////
+    ✔ Passangercountcomponent class, template 3:11 cannot read length of undefined, @done(21-04-16 00:21)
+    se instancia este componente primer antes de recibir todos los datos desde el servicio?
+    Añado safe operator a items.length en el template de passanger-count para que no falle
+    - Se explica al final del video, se añade el safe operator, en cuanto la variable esté disponible, se muestra.
+    ///////
+    ☐ Como sabe el Http que tiene que ir a buscar el json a la ruta /api/passanger ?
+    ☐ Metodo subscribe

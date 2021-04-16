@@ -1,0 +1,46 @@
+<div>
+    <h3>Passanger</h3>
+    <div>
+        <span 
+            class="status"
+            [ngClass]="{
+                'checked-in': detail.checkedIn,
+                'cheked-out': !detail.checkedIn
+            }"    
+        ></span>
+        <div *ngIf="editing; else notEditing">
+            <input 
+                type="text" 
+                [value]="detail.fullname"
+                (input)="onNameChange(name.value)"
+                #name
+            >
+        </div>
+        <template #notEditing>
+            {{ detail.fullname }}
+        </template>
+        <div class="date">
+            Check-in date: 
+            {{ detail.checkedIn 
+                ? (detail.checkedInDate | date: 'yMMMMd')
+                : 'Not checked in yet.'
+            }}
+        </div>
+        <div class="children">
+            <div *ngIf="detail.children; else noChild">
+                <ul>
+                    <li *ngFor="let child of detail.children;">
+                        {{ child.name }}, {{ child.age }} años
+                    </li>
+                </ul>
+            </div>
+            <template #noChild>No children</template>
+        </div>
+    </div>
+    <button (click)="toggleEditing()">
+        {{ editing ? 'Bloquear' : 'Desbloquear'}}
+    </button>
+    <button (click)="onRemove()">
+        Borrar
+    </button>
+</div>

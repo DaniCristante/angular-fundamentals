@@ -1,0 +1,46 @@
+{
+  "passangers": [
+    {
+      "id": 1,
+      "fullname": "stevenadfasdf",
+      "checkedIn": true,
+      "checkedInDate": 1490742000000,
+      "children": [
+        {
+          "name": "hulio",
+          "age": 5
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fullname": "Xori",
+      "checkedIn": false,
+      "checkedInDate": null,
+      "children": null
+    },
+    {
+      "id": 3,
+      "fullname": "Nere",
+      "checkedIn": false,
+      "checkedInDate": null,
+      "children": [
+        {
+          "name": "jules",
+          "age": 5
+        },
+        {
+          "name": "pepe",
+          "age": 12
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "fullname": "Vin",
+      "checkedIn": true,
+      "checkedInDate": 1490742000000,
+      "children": null
+    }
+  ]
+}

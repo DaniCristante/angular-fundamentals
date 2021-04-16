@@ -1,0 +1,14 @@
+.status {
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    display: inline-block;
+    margin: 8px 5px 0 0;
+    border-radius: 75%;
+    &.checked-in {
+        background: rgb(61, 66, 61);
+    }
+    &.checked-out {
+        background: red;
+    }
+}

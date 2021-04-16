@@ -1,0 +1,32 @@
+<div>
+    <div>
+        <h3>Passangers</h3>
+        <ul>
+            <li *ngFor="let passanger of passangers; let i = index;">
+                <span 
+                    class="status"
+                    [class.checked-in]="passanger.checkedIn"
+                ></span>
+                {{ i }}: {{ passanger.fullname }}
+                <p> {{ passanger | json }}</p>
+                <div class="date">
+                    Check-in date: 
+                    {{ passanger.checkedIn 
+                        ? (passanger.checkedInDate | date: 'yMMMMd')
+                        : 'Not checked in yet.'
+                    }}
+                </div>
+                <div class="children">
+                    Children: {{ passanger.children?.length || 0 }}
+                    <div *ngIf="passanger.children">
+                        <ul>
+                            <li *ngFor="let child of passanger.children;">
+                                {{ child.name }}, {{ child.age }} años
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
