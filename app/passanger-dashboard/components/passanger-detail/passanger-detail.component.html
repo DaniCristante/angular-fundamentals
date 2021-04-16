@@ -26,16 +26,6 @@
                 : 'Not checked in yet.'
             }}
         </div>
-        <div class="children">
-            <div *ngIf="detail.children; else noChild">
-                <ul>
-                    <li *ngFor="let child of detail.children;">
-                        {{ child.name }}, {{ child.age }} años
-                    </li>
-                </ul>
-            </div>
-            <template #noChild>No children</template>
-        </div>
     </div>
     <button (click)="toggleEditing()">
         {{ editing ? 'Bloquear' : 'Desbloquear'}}

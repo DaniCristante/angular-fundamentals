@@ -16,7 +16,7 @@ export class PassangerDashboardService {
         fullname: 'manolo',
         checkedIn: false,
         checkedInDate: null,
-        children: null
+        baggage: ""
     };
 
     constructor(private httpService: Http){
