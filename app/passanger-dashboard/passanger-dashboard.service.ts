@@ -2,6 +2,8 @@ import { Passanger } from './models/passanger.interface';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
@@ -25,7 +27,8 @@ export class PassangerDashboardService {
             .get(PASSANGER_API)
             .map((response: Response) => {
                 return response.json();
-            });
+            })
+            .catch((error: any) => Observable.throw(error.json()));
     }
 
     updatePassangers(passanger: Passanger): Observable<Passanger> {
@@ -39,7 +42,8 @@ export class PassangerDashboardService {
             .put(`${PASSANGER_API}/${passanger.id}`, passanger, options)
             .map((response: Response) => {
                 return response.json();
-            });
+            })
+            .catch((error: any) => Observable.throw(error.json()));
     }
 
     removePassangers(passanger: Passanger): Observable<Passanger> {
@@ -47,12 +51,14 @@ export class PassangerDashboardService {
             .delete(`${PASSANGER_API}/${passanger.id}`)
             .map((response: Response) => {
                 return response.json();
-            });
+            })
+            .catch((error: any) => Observable.throw(error.json()));
     }
 
     addPassanger(): Observable<Passanger> {
         return this.httpService
             .post(`${PASSANGER_API}`, this.newPassanger)
-            .map((response: Response) => response.json());
+            .map((response: Response) => response.json())
+            .catch((error: any) => Observable.throw(error.json()));
     }
 }

@@ -21,7 +21,7 @@ export class PassangerDashboardComponent implements OnInit {
     ngOnInit() {
         this.passangerService
             .getPassangers()
-            .subscribe((data: Passanger[]) => this.passangers = data);
+            .subscribe((data: Passanger[]) => this.passangers = data, (error: any) => console.log(error));
     }
 
     removePassanger(event: Passanger){
@@ -31,7 +31,7 @@ export class PassangerDashboardComponent implements OnInit {
                 this.passangers = this.passangers.filter((passanger: Passanger) => {
                     return passanger.id !== event.id ;
             })
-        });
+        }, (error: any) => console.log(error));
     }
 
     editPassanger(event: Passanger){
@@ -44,7 +44,7 @@ export class PassangerDashboardComponent implements OnInit {
                     }
                     return passanger;
                 })
-            })
+            }, (error: any) => console.log(error))
     }
 
     addPassanger(){
@@ -52,6 +52,6 @@ export class PassangerDashboardComponent implements OnInit {
             .addPassanger()
             .subscribe((data: Passanger) => {
                 this.passangers.push(data);
-            })
+            }, (error: any) => console.log('errorr'))
     }
 }
