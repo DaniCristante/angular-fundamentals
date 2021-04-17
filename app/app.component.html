@@ -1,9 +1,18 @@
 <div class="app">
     <div>
-        <ul>
-            <li><a routerLink="/"> Home </a></li>
-            <li><a routerLink="/random"> Not found component</a></li>
-        </ul>
+        <nav class="nav">
+            <a 
+                routerLink="/"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"> 
+                Home 
+            </a>
+            <a 
+                routerLink="/random"
+                routerLinkActive="active"> 
+                404 Page
+            </a>
+        </nav>
     </div>
     <router-outlet></router-outlet>
 </div>
