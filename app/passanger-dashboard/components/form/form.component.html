@@ -5,14 +5,25 @@
             type="text"
             name="fullname"
             [ngModel]="detail?.fullname"
+            #fullname="ngModel"
+            required
         >
+        <div *ngIf="fullname.errors?.required && fullname.dirty" class="error-message">
+            Name is required
+        </div>
+        <!-- {{ fullname.errors | json }} -->
     </div>
     <div>
         <input
             type="number"
             name="id"
             [ngModel]="detail?.id"
+            #id="ngModel"
+            required
         >
+        <div class="error-message" *ngIf="id.errors?.required && id.dirty">
+            ID is required
+        </div>
     </div>
     
     <div>
