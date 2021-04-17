@@ -23,4 +23,12 @@ export class PassangerViewerComponent implements OnInit {
                 this.passanger = data;          
             })
     }
+
+    onUpdatePassanger(event: Passanger) {
+        this.passangerService
+            .updatePassangers(event)
+            .subscribe((data: Passanger) => {
+                this.passanger = Object.assign({}, this.passanger, event);
+            })
+    }
 }

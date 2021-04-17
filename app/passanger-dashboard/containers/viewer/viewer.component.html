@@ -1,3 +1,7 @@
 <div>
-    <passanger-form [detail]="passanger"></passanger-form>
+    <passanger-form 
+        [detail]="passanger"
+        (update)="onUpdatePassanger($event)"
+    >
+    </passanger-form>
 </div>
