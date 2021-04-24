@@ -23,6 +23,11 @@ export class AppComponent {
       link: '/random',
       exact: false,
       name: '404'
+    },
+    {
+      link: 'passangers',
+      exact: false,
+      name: 'Passangers'
     }
   ]
 }
