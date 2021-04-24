@@ -39,3 +39,4 @@ Routing:
     ☐ Porque al utilziar router childn o necesitamos exportar componentes?
     (Bien formulada esta pregunta?)
     ☐ RouterModule.forRoot vs RouterModule.forChild
+    ☐ RXJS operators??
