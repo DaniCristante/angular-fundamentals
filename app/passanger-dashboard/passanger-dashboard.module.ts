@@ -14,8 +14,17 @@ import { PassangerDashboardService } from './passanger-dashboard.service';
 
 const routes: Route[] = [
     {
-        component: PassangerDashboardComponent,
-        path: 'passangers'
+        path: 'passangers',
+        children: [
+            {
+                path: '',
+                component: PassangerDashboardComponent,
+            },
+            {
+                path: ':id',
+                component: PassangerViewerComponent
+            }
+        ]
     }
 ]
 
